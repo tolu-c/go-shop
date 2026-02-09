@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"log/slog"
 	"os"
 )
@@ -23,9 +22,8 @@ func main() {
 	err := api.run(api.mount())
 
 	if err != nil {
-		log.Printf("server has failed to start with error: %v", err)
+		slog.Error("server failed to start", "error", err)
 
 		os.Exit(1)
 	}
-
 }
