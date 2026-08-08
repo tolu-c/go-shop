@@ -1,0 +1,23 @@
+{{ template "header.html" }}
+
+<main>
+  <div class="video__list">
+    {{ range .videos }}
+    <div class="video__list__item">
+      <iframe
+        src="{{ .URL }}"
+        width="300"
+        height="200"
+        allow="accelerometer; autoplay; picture-in-picture"
+      ></iframe>
+
+      <div class="video__list__item__info">
+        <p>{{ .Title }}</p>
+        <p>{{ .Description }}</p>
+      </div>
+    </div>
+    {{end}}
+  </div>
+</main>
+
+{{ template "footer.html" }}
